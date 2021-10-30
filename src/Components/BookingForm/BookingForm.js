@@ -135,10 +135,10 @@ const BookingForm = () => {
                                         </label>
                                         <div>
                                             <select className="w-full bg-green-200 border border-green-500 text-black text-xs py-3 px-4 pr-8 mb-3 rounded" id="vaccine" {...register("vaccine", { required: true })}>
-                                                <option value='registerd'>Registerd and waiting</option>
-                                                <option value='no'>No</option>
-                                                <option value='yes'>Yes</option>
-                                                <option value='oneDone'>Only first dose done</option>
+                                                <option value='Waiting'>Registerd and waiting</option>
+                                                <option value='No'>No</option>
+                                                <option value='Yes'>Yes</option>
+                                                <option value='Onedone'>Only first dose done</option>
                                             </select>
                                         </div>
                                     </div>
