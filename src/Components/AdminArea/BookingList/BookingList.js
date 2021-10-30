@@ -1,8 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
+import useAuth from '../../../Hooks/useAuth';
 import BookingRow from './BookingRow/BookingRow';
 const BookingList = () => {
+    const { user } = useAuth();
     const [items, setItems] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/bookinglist')
@@ -61,12 +64,18 @@ const BookingList = () => {
                                     <th className="px-4 py-3 border"><i className="fas fa-users"></i></th>
                                     <th className="px-4 py-3 border">DATE</th>
                                     <th className="px-4 py-3 border">FROM-&gt;TO</th>
+                                    {
+                                        user.email === 'najmul15-11321@diu.edu.bd' ||
+                                        <th className="px-4 py-3 border">PACKAGE</th>
+                                    }
                                     <th className="px-4 py-3 border">VACCINE</th>
                                     <th className="px-4 py-3 border"><i className="fas fa-hotel"></i></th>
                                     <th className="px-4 py-3 border"><i className="fas fa-eye"></i></th>
                                     <th className="px-4 py-3 border"><i className="fas fa-plane-arrival"></i></th>
-                                    <th className="px-4 py-3 border">ACTION</th>
-
+                                    {
+                                        user.email === 'najmul15-11321@diu.edu.bd' &&
+                                        <th className="px-4 py-3 border">ACTION</th>
+                                    }
                                 </tr>
                             </thead>
                             <tbody className="bg-white">

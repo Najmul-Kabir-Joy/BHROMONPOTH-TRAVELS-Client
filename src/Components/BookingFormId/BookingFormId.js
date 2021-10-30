@@ -1,12 +1,13 @@
 import React from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useAuth from '../../Hooks/useAuth';
 
-const BookingForm = () => {
+const BookingFormId = () => {
+    const packageName = useParams();
     const { user } = useAuth();
     const { displayName, email } = user;
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -93,13 +94,13 @@ const BookingForm = () => {
                                             className="w-full bg-green-200 text-black border border-green-500 rounded py-3 px-4 mb-3" {...register("date", { required: true })} />
                                     </div>
                                 </div>
-                                {/*THIRD ROW*/}
+                                {/* THIRD ROW */}
                                 <div className="-mx-3 md:flex mb-6">
                                     <div className="md:w-full px-3 mb-6 md:mb-0">
                                         <label className="uppercase tracking-wide text-black text-xs font-bold mb-2" htmlFor="pacName">
                                             PACKAGE NAME*
                                         </label>
-                                        <input className="w-full bg-green-200 text-black border border-green-500 rounded py-3 px-4 mb-3" id="pacName" type="text" placeholder="Package Name" {...register("packName", { required: true })} />
+                                        <input className="w-full bg-green-200 text-black border border-green-500 rounded py-3 px-4 mb-3" id="pacName" defaultValue={packageName.id} readOnly type="text" placeholder="Package Name" {...register("packName", { required: true })} />
 
                                     </div>
                                 </div>
@@ -201,4 +202,4 @@ const BookingForm = () => {
     );
 };
 
-export default BookingForm;
+export default BookingFormId;

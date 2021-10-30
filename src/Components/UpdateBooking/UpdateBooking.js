@@ -15,7 +15,6 @@ const UpdateBooking = () => {
             .then(res => res.json())
             .then(data => setItem(data));
     }, [])
-    const location = useLocation();
     const history = useHistory();
     // const redirectUrl = location.state;
     const nameupdate = e => {
@@ -56,6 +55,11 @@ const UpdateBooking = () => {
     const vacupdate = e => {
         const updatedProduct = { ...item };
         updatedProduct.vaccine = e.target.value;
+        setItem(updatedProduct);
+    };
+    const packupdate = e => {
+        const updatedProduct = { ...item };
+        updatedProduct.packName = e.target.value;
         setItem(updatedProduct);
     };
     const hotelupdate = e => {
@@ -150,8 +154,18 @@ const UpdateBooking = () => {
                                     className="w-full bg-green-200 text-black border border-green-500 rounded py-3 px-4 mb-3" onChange={dateupdate} value={item.date || ''} />
                             </div>
                         </div>
+                        {/*THIRD ROW */}
+                        <div className="-mx-3 md:flex mb-6">
+                            <div className="md:w-full px-3 mb-6 md:mb-0">
+                                <label className="uppercase tracking-wide text-black text-xs font-bold mb-2" htmlFor="pacName">
+                                    PACKAGE NAME*
+                                </label>
+                                <input className="w-full bg-green-200 text-black border border-green-500 rounded py-3 px-4 mb-3" id="pacName" type="text" placeholder="Package Name" onChange={packupdate} value={item.packName || ''} />
 
-                        {/* THIRD ROW */}
+                            </div>
+                        </div>
+
+                        {/* FORTH ROW */}
                         <div className="-mx-3 md:flex mb-2">
                             <div className="md:w-1/2 px-3 mb-6 md:mb-0">
                                 <label className="uppercase tracking-wide text-black text-xs font-bold mb-2" htmlFor="tfrom">
@@ -203,7 +217,7 @@ const UpdateBooking = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* FORTH ROW */}
+                        {/* FIFTH ROW */}
 
                         <div className="-mx-3 md:flex mb-6">
                             <div className="md:w-1/3 px-3 mb-6 md:mb-0 flex">

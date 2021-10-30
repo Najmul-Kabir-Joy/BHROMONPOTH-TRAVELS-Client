@@ -61,7 +61,7 @@ const AddNewDestination = () => {
                                     <label className="uppercase tracking-wide text-black text-xs font-bold mb-2" htmlFor="title">
                                         short title*
                                     </label>
-                                    <input className="w-full bg-green-200 text-black border border-green-500 rounded py-3 px-4 mb-3" id="title" type="text" placeholder="Short title" {...register("shorttitle", { required: true })} />
+                                    <input className="w-full bg-green-200 text-black border border-green-500 rounded py-3 px-4 mb-3" id="title" type="text" placeholder="Short title" {...register("shorttitle", { required: true, minLength: 110 })} />
                                 </div>
                             </div>
                             {/*ROW 2*/}

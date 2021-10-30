@@ -1,16 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 const PackageDetails = () => {
+    const id = useParams();
+    const [details, setDetails] = useState({});
+    const url = `http://localhost:5000/packagelist/${id.id}`
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setDetails(data))
+    }, [])
     return (
         <div>
             <div className='mt-10'>
-                <h1 className='text-3xl inline border-b-2 border-green-400'>DETAILS FOR PACKAGE NAME</h1>
+                <h1 className='text-3xl inline border-b-2 border-green-400 uppercase'>DETAILS FOR {details.countryname}</h1>
             </div>
             <section className="text-gray-600 body-font">
                 <div className="container px-5 pt-24 mx-auto flex flex-wrap">
                     <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
-                        <img alt="feature" className="object-cover object-center h-full w-full" src="https://wallpapercave.com/wp/wp4069431.jpg" />
+                        <img alt="feature" className="object-cover object-center h-full w-full" src={details.imgsrc} />
                     </div>
                     <div className="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
                         <div className="flex flex-wrap -m-4">
@@ -19,8 +27,8 @@ const PackageDetails = () => {
                                     <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-4">
                                         <i className="fas fa-dollar-sign text-xl"></i>
                                     </div>
-                                    <h2 className="text-lg text-gray-900 font-medium title-font mb-2">$200/person</h2>
-                                    <p className="leading-relaxed text-base">For each person the total amount is 200$ only</p>
+                                    <h2 className="text-lg text-gray-900 font-medium title-font mb-2">${details.money}/person</h2>
+                                    <p className="leading-relaxed text-base">For each person the total amount is {details.money}$ only</p>
                                 </div>
                             </div>
                             <div className="xl:w-1/2 md:w-1/2 p-4 shadow-xl mb-5 border border-green-200">
@@ -28,8 +36,8 @@ const PackageDetails = () => {
                                     <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-4">
                                         <i className="fas fa-calendar-day text-xl"></i>
                                     </div>
-                                    <h2 className="text-lg text-gray-900 font-medium title-font mb-2">9 Days 7 Nights</h2>
-                                    <p className="leading-relaxed text-base">We will spend total 9 days and 7 nights including departure day.</p>
+                                    <h2 className="text-lg text-gray-900 font-medium title-font mb-2">{details.days}</h2>
+                                    <p className="leading-relaxed text-base">We will spend total {details.days} including departure day.</p>
                                 </div>
                             </div>
                             <div className="xl:w-1/2 md:w-1/2 p-4 shadow-xl mb-5 border border-green-200">
@@ -37,8 +45,8 @@ const PackageDetails = () => {
                                     <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-4">
                                         <i className="fas fa-users text-xl"></i>
                                     </div>
-                                    <h2 className="text-lg text-green-900 font-medium title-font mb-2">30 persons</h2>
-                                    <p className="leading-relaxed text-base">Our maximum group member limit is only 30 persons.</p>
+                                    <h2 className="text-lg text-green-900 font-medium title-font mb-2">{details.persons} persons</h2>
+                                    <p className="leading-relaxed text-base">Our maximum group member limit is only {details.persons} persons.</p>
                                 </div>
                             </div>
                             <div className="xl:w-1/2 md:w-1/2 p-4 shadow-xl mb-5 border border-green-200">
@@ -46,8 +54,8 @@ const PackageDetails = () => {
                                     <div className="w-10 h-10 inline-flex items-center justify-center rounded-full bg-green-100 text-green-500 mb-4">
                                         <i className="far fa-flag text-xl"></i>
                                     </div>
-                                    <h2 className="text-lg text-gray-900 font-medium title-font mb-2">10 Places</h2>
-                                    <p className="leading-relaxed text-base">We will visit 10 awesome tourist attraction places.</p>
+                                    <h2 className="text-lg text-gray-900 font-medium title-font mb-2">{details.places} Places</h2>
+                                    <p className="leading-relaxed text-base">We will visit {details.places} awesome tourist attraction places.</p>
                                 </div>
                             </div>
                             <div className="xl:w-1/2 md:w-1/2 p-4 shadow-xl mb-5 border border-green-200">
@@ -84,10 +92,10 @@ const PackageDetails = () => {
                             <span class="inline-block h-1 w-10 rounded bg-green-500 mt-8 mb-6"></span>
                             <div>
                                 <Link
-                                    to="bookingform"
-                                    className=" px-5 py-3 mt-3 font-medium border border-green-600 rounded-lg sm:ml-3 sm:mt-0 hover:bg-green-500"
+                                    to={`/bookingpackage/${details.countryname}`}
+                                    className=" px-5 py-3 mt-3 font-medium border border-green-600 rounded-lg sm:ml-3 sm:mt-0 hover:bg-green-500 hover:text-white"
                                 >
-                                    BOOK YOUR SEAT NOW
+                                    BOOK YOUR SEAT
                                 </Link>
                             </div>
                         </div>

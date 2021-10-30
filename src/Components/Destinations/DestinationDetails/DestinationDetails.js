@@ -1,11 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 const DestinationDetails = () => {
+    const id = useParams();
+    const [details, setDetails] = useState({});
+    const url = `http://localhost:5000/destinationlist/${id.id}`;
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setDetails(data))
+    }, [url])
     return (
         <div>
             {/*TOP BANNER*/}
-            <section className="relative text-white bg-center bg-no-repeat bg-cover" role="banner" style={{ backgroundImage: "url(https://www.istanbulturkeytravel.com/wp-content/uploads/2020/04/cappadocia.jpg)" }}>
+            <section className="relative text-white bg-center bg-no-repeat bg-cover" role="banner" style={{ backgroundImage: `url(${details.bannerimg})` }}>
                 <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
                 <div className="relative px-4 py-24 mx-auto max-w-screen-xl sm:px-6 lg:px-8 sm:py-36 lg:flex lg:items-center">
@@ -13,21 +21,21 @@ const DestinationDetails = () => {
                     <div className="max-w-3xl mx-auto text-center ">
 
                         <h1
-                            className="text-3xl font-extrabold text-transparent sm:text-6xl bg-clip-text bg-gradient-to-r from-green-200 via-green-500 to-green-200"
+                            className="text-3xl font-extrabold text-transparent sm:text-6xl bg-clip-text text-white"
                         >
-                            COUNTRY NAME
+                            {details.countryname}
                         </h1>
 
                         <p className="max-w-xl mx-auto mt-6 text-lg">
-                            SHORT TITLE WILL BE HERE
+                            {details.shorttitle}
                         </p>
 
                         <div className="mt-8 sm:justify-center sm:flex">
                             <Link
-                                to=""
+                                to="/allpackages"
                                 className="block px-5 py-3 mt-3 font-medium border border-green-600 rounded-lg sm:ml-3 sm:mt-0 hover:bg-green-500"
                             >
-                                SHOW ALL DESINATIONS
+                                SHOW ALL PACKAGES
                             </Link>
                         </div>
                     </div>
@@ -37,8 +45,8 @@ const DestinationDetails = () => {
             <section className='mb-16 mt-10'>
                 <div className='text-center'>
                     <p><i className="fas fa-map-marked-alt text-6xl text-green-400"></i></p>
-                    <p className='text-3xl p-2'>WHY COUNTRY NAME</p>
-                    <p className='px-10 lg:px-80 md:px-56 text-justify'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, ipsum. Amet explicabo facere eveniet? Quae nostrum iure distinctio nisi deleniti consectetur quam unde repellendus a, corporis placeat corrupti eaque aperiam mollitia consequatur error suscipit, libero cumque iusto soluta neque. Fuga obcaecati neque perspiciatis autem modi ducimus, error vitae voluptates, pariatur libero aliquid natus exercitationem fugit sequi non! Itaque soluta ex possimus eaque consequatur. Dolorum delectus voluptate dolor veritatis, suscipit quisquam et a quia magni? Cumque aperiam doloribus, velit quo earum eligendi. Porro odio explicabo numquam quibusdam ratione voluptatum tempore beatae accusantium nemo doloribus ab odit, exercitationem minima vel architecto esse.</p>
+                    <p className='text-3xl p-2'>WHY {details.countryname}</p>
+                    <p className='px-10 lg:px-80 md:px-56 text-justify'>{details.longdes}</p>
                 </div>
             </section>
             {/*ZIGZAG ABOUT */}
@@ -47,34 +55,34 @@ const DestinationDetails = () => {
                     <div className='container mx-auto'>
                         <div className='lg:grid lg:grid-cols-2 grid grid-cols-1'>
                             <div className='flex flex-col justify-center items-center px-20'>
-                                <h3 className='text-3xl mb-3 font-bold'>Quality service at Affordable Cost</h3>
-                                <p>One of the many challenges in today’s healthcare system is quality service, made available at an affordable cost. In this year we will also be focussing on investing in training and development of human resource. A smart and mature team is the backbone of any organization. We want our team to grow with us. Many members of our team are with us since the inception phase and have contributed all these years in our progress. We are providing value-based education and training to our team and their families. Empowering the team with crucial decision-making rights and pushing them to perform at higher levels, reveal their inner strengths and capabilities.</p>
+                                <h3 className='text-3xl mb-3 font-bold'>AWESOME TRAVELLING PLACES</h3>
+                                <p>{details.desone}</p>
                                 <div className='mt-5'>
                                     <Link
-                                        to=""
-                                        className="block px-5 py-3 mt-3 font-medium border border-green-600 rounded-lg sm:ml-3 sm:mt-0 hover:bg-green-500"
+                                        to="/allpackages"
+                                        className="block px-5 py-3 mt-3 font-medium border border-green-600 rounded-lg sm:ml-3 sm:mt-0 hover:bg-green-500 hover:text-white"
                                     >
-                                        TRAVEL HERE
+                                        SHOW ALL PACKAGES
                                     </Link>
                                 </div>
                             </div>
                             <div className="about-img">
-                                <img src="https://www.istanbulturkeytravel.com/wp-content/uploads/2020/04/cappadocia.jpg" alt="" height="450" width="100%" />
+                                <img src={details.desimgone} alt="" height="450" width="100%" />
                             </div>
                         </div>
                         <div className='lg:grid lg:grid-cols-2 grid grid-cols-1'>
                             <div className="about-img">
-                                <img src="https://www.istanbulturkeytravel.com/wp-content/uploads/2020/04/cappadocia.jpg" alt="" height="450" width="100%" />
+                                <img src={details.desimgtwo} alt="" height="450" width="100%" />
                             </div>
                             <div className='flex flex-col justify-center items-center px-20'>
-                                <h3 className='text-3xl mb-3 font-bold'>Top Specialist</h3>
-                                <p>Specialist is defined as an expert in some field or a person who concentrates his or her energies on a specific field. A doctor who focuses on care of the heart is an example of a heart specialist. Any of several noncommissioned ranks in the US Army that correspond to that of corporal through sergeant first class</p>
+                                <h3 className='text-3xl mb-3 font-bold'>SOUL MEETS CONTENTMENT</h3>
+                                <p>${details.destwo}</p>
                                 <div className='mt-5'>
                                     <Link
-                                        to=""
-                                        className="block px-5 py-3 mt-3 font-medium border border-green-600 rounded-lg sm:ml-3 sm:mt-0 hover:bg-green-500"
+                                        to="/allpackages"
+                                        className="block px-5 py-3 mt-3 font-medium border border-green-600 rounded-lg sm:ml-3 sm:mt-0 hover:bg-green-500 hover:text-white"
                                     >
-                                        TRAVEL HERE
+                                        SHOW ALL PACKAGES
                                     </Link>
                                 </div>
                             </div>
@@ -148,7 +156,7 @@ const DestinationDetails = () => {
                                 </div>
                             </div>
                         </div>
-                        <img className="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12" src="https://www.istanbulturkeytravel.com/wp-content/uploads/2020/04/cappadocia.jpg" alt="step" />
+                        <img className="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12" src={details.bannerimg} alt="step" />
                     </div>
                 </div>
             </section>
@@ -164,8 +172,8 @@ const DestinationDetails = () => {
                             <span class="inline-block h-1 w-10 rounded bg-green-500 mt-8 mb-6"></span>
                             <div>
                                 <Link
-                                    to=""
-                                    className=" px-5 py-3 mt-3 font-medium border border-green-600 rounded-lg sm:ml-3 sm:mt-0 hover:bg-green-500"
+                                    to="/allpackages"
+                                    className=" px-5 py-3 mt-3 font-medium border border-green-600 rounded-lg sm:ml-3 sm:mt-0 hover:bg-green-500 hover:text-white"
                                 >
                                     BOOK YOUR SEAT NOW
                                 </Link>

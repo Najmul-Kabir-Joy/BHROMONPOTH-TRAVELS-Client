@@ -1,26 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import PackageCard from '../../Packages/PackageCard/PackageCard';
+import PackageCard from '../PackageCard/PackageCard';
 
-const Packages = () => {
-    const [list, setList] = useState([]);
+const AllPackages = () => {
+    const [list, setList] = useState([])
     useEffect(() => {
         fetch('http://localhost:5000/packagelist')
             .then(res => res.json())
             .then(data => setList(data.packages))
     }, [])
     return (
-        <div className='mt-16'>
-            <div>
-                <h1 className='text-5xl border-b-2 border-green-400 inline'>OUR POPULAR PACKAGES</h1>
+        <div>
+            <div className='text-center py-10'>
+                <h1 className='text-3xl inline border-b border-green-400'>OUR ALL ACTIVE PACKAGES</h1>
             </div>
-            <section class="text-gray-600 body-font overflow-hidden">
-                <div class="container px-5 py-14 mx-auto">
+            <section class="text-gray-600 body-font overflow-hidden pb-36">
+                <div class="container px-5 py-4 mx-auto">
                     {
                         list.length > 0 ?
                             <div class="flex flex-wrap -m-4">
                                 {
-                                    list.slice(0, 6).map(item => <PackageCard key={item._id} item={item}></PackageCard>)
+                                    list.map(item => <PackageCard key={item._id} item={item}></PackageCard>)
                                 }
                             </div>
                             :
@@ -44,4 +43,4 @@ const Packages = () => {
     );
 };
 
-export default Packages;
+export default AllPackages;

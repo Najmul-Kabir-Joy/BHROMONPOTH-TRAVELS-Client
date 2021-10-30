@@ -1,0 +1,9 @@
+.testingEffect:hover{
+    transform: translate(0px, -20px);
+    transition: 1s ease-in-out;
+}
+
+.testingEffect:hover button{
+    transform: translate(0px, -10px);
+    transition: 1.5s ease-in-out;
+}
