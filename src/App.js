@@ -1,23 +1,44 @@
-import logo from './logo.svg';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
+import AddNewDestination from './Components/AddNewDestination/AddNewDestination';
+import AddNewPackage from './Components/AddNewPackage/AddNewPackage';
+import BookingForm from './Components/BookingForm/BookingForm';
+import DestinationDetails from './Components/Destinations/DestinationDetails/DestinationDetails';
+import Footer from './Components/Footer/Footer';
+import HomePage from './Components/Home/HomePage/HomePage';
+import Navigationbar from './Components/Navigationbar/Navigationbar';
+import PackageDetails from './Components/Packages/PackageDetails/PackageDetails';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Navigationbar></Navigationbar>
+        <Switch>
+          <Route exact path='/'>
+            <HomePage></HomePage>
+          </Route>
+          <Route path='/home'>
+            <HomePage></HomePage>
+          </Route>
+          <Route path='/bookingform'>
+            <BookingForm></BookingForm>
+          </Route>
+          <Route path='/packagedetails'>
+            <PackageDetails></PackageDetails>
+          </Route>
+          <Route path='/destinationdetails'>
+            <DestinationDetails></DestinationDetails>
+          </Route>
+          <Route path='/addnewdestination'>
+            <AddNewDestination></AddNewDestination>
+          </Route>
+          <Route path='/addnewpackage'>
+            <AddNewPackage></AddNewPackage>
+          </Route>
+        </Switch>
+        <Footer></Footer>
+      </BrowserRouter>
     </div>
   );
 }
