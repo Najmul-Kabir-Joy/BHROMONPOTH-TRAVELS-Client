@@ -20,7 +20,7 @@ const Galary = () => {
                         <section class="pt-0 px-4">
                             <div class="flex flex-wrap -mx-4">
                                 {
-                                    items.slice(0, 6).map(item => <GalaryImg key={item._id} item={item}></GalaryImg>)
+                                    items.slice(0, 8).map(item => <GalaryImg key={item._id} item={item}></GalaryImg>)
                                 }
                             </div>
                         </section>

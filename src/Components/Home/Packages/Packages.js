@@ -20,7 +20,7 @@ const Packages = () => {
                         list.length > 0 ?
                             <div class="flex flex-wrap -m-4">
                                 {
-                                    list.slice(0, 6).map(item => <PackageCard key={item._id} item={item}></PackageCard>)
+                                    list.slice(0, 8).map(item => <PackageCard key={item._id} item={item}></PackageCard>)
                                 }
                             </div>
                             :
