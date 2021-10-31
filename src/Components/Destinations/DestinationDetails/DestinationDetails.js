@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 const DestinationDetails = () => {
     const id = useParams();
     const [details, setDetails] = useState({});
-    const url = `http://localhost:5000/destinationlist/${id.id}`;
+    const url = `https://ghastly-nightmare-99427.herokuapp.com/destinationlist/${id.id}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

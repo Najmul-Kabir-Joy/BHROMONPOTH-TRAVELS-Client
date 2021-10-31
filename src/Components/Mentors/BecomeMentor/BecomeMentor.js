@@ -8,7 +8,7 @@ const BecomeMentor = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.status = 'pending'
-        axios.post('http://localhost:5000/mentors', data)
+        axios.post('https://ghastly-nightmare-99427.herokuapp.com/mentors', data)
             .then(res => {
                 if (res.data.insertedId) {
                     toast('✅ Added successfully', {

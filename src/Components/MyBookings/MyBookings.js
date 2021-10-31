@@ -10,7 +10,7 @@ const MyBookings = () => {
     const [items, setItems] = useState([]);
     const id = useParams();
     useEffect(() => {
-        fetch(`http://localhost:5000/mybookings/${id.id}`)
+        fetch(`https://ghastly-nightmare-99427.herokuapp.com/mybookings/${id.id}`)
             .then(res => res.json())
             .then(data => {
                 setItems(data)
@@ -19,7 +19,7 @@ const MyBookings = () => {
     const handleDelete = (id) => {
         const approve = window.confirm('You really want to delete?')
         if (approve) {
-            const url = `http://localhost:5000/bookinglist/${id}`;
+            const url = `https://ghastly-nightmare-99427.herokuapp.com/bookinglist/${id}`;
             axios.delete(url)
                 .then(res => {
                     if (res.data.deletedCount > 0) {

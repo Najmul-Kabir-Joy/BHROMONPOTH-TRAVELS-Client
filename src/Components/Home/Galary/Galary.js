@@ -4,7 +4,7 @@ import GalaryImg from './GalaryImg/GalaryImg';
 const Galary = () => {
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allphotos')
+        fetch('https://ghastly-nightmare-99427.herokuapp.com/allphotos')
             .then(res => res.json())
             .then(data => setItems(data));
 

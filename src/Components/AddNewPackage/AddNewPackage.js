@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const AddNewPackage = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
-        axios.post('http://localhost:5000/packagelist', data)
+        axios.post('https://ghastly-nightmare-99427.herokuapp.com/packagelist', data)
             .then(res => {
                 if (res.data.insertedId) {
                     toast('✅ Added successfully', {

@@ -10,7 +10,7 @@ const UpdateBooking = () => {
     const { reset } = useForm();
     const [item, setItem] = useState({});
     useEffect(() => {
-        const url = `http://localhost:5000/bookinglist/${id}`
+        const url = `https://ghastly-nightmare-99427.herokuapp.com/bookinglist/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data));
@@ -78,7 +78,7 @@ const UpdateBooking = () => {
         setItem(updatedProduct);
     };
     const handleUpdate = e => {
-        const url = `http://localhost:5000/bookinglist/${id}`
+        const url = `https://ghastly-nightmare-99427.herokuapp.com/bookinglist/${id}`
         axios.put(url, item)
             .then(res => {
                 if (res.data.modifiedCount) {

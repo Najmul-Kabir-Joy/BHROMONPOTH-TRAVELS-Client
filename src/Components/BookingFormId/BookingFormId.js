@@ -13,7 +13,7 @@ const BookingFormId = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.uid = user.uid;
-        axios.post('http://localhost:5000/bookinglist', data)
+        axios.post('https://ghastly-nightmare-99427.herokuapp.com/bookinglist', data)
             .then(res => {
                 if (res.data.insertedId) {
                     toast('✅ Booking taken, we will contact you soon', {

@@ -8,14 +8,14 @@ const ManageMentors = () => {
     const [list, setList] = useState([]);
     const history = useHistory();
     useEffect(() => {
-        fetch('http://localhost:5000/mentors')
+        fetch('https://ghastly-nightmare-99427.herokuapp.com/mentors')
             .then(res => res.json())
             .then(data => setList(data))
     }, [])
     const handleDelete = (id) => {
         const approve = window.confirm('You really want to delete?')
         if (approve) {
-            const url = `http://localhost:5000/mentors/${id}`;
+            const url = `https://ghastly-nightmare-99427.herokuapp.com/mentors/${id}`;
             axios.delete(url)
                 .then(res => {
                     if (res.data.deletedCount > 0) {
@@ -38,7 +38,7 @@ const ManageMentors = () => {
     const handleApprove = (id) => {
         const approve = window.confirm('You really want to add him as mentor?');
         if (approve) {
-            const url = `http://localhost:5000/mentors/${id}`;
+            const url = `https://ghastly-nightmare-99427.herokuapp.com/mentors/${id}`;
             const data = { status: 'ACTIVE' };
             axios.put(url, data)
                 .then(res => {

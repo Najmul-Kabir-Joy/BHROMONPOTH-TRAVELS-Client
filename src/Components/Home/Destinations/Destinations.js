@@ -5,7 +5,7 @@ import DestinationCard from '../../Destinations/DestinationCard/DestinationCard'
 const Destinations = () => {
     const [list, setList] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/destinationlist')
+        fetch('https://ghastly-nightmare-99427.herokuapp.com/destinationlist')
             .then(res => res.json())
             .then(data => setList(data.destinatons))
     }, [])

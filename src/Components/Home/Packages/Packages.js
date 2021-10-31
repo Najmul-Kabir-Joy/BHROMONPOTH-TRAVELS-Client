@@ -5,7 +5,7 @@ import PackageCard from '../../Packages/PackageCard/PackageCard';
 const Packages = () => {
     const [list, setList] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/packagelist')
+        fetch('https://ghastly-nightmare-99427.herokuapp.com/packagelist')
             .then(res => res.json())
             .then(data => setList(data.packages))
     }, [])

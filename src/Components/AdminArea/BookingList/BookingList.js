@@ -8,7 +8,7 @@ const BookingList = () => {
     const { user } = useAuth();
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/bookinglist')
+        fetch('https://ghastly-nightmare-99427.herokuapp.com/bookinglist')
             .then(res => res.json())
             .then(data => {
                 setItems(data.bookings)
@@ -17,7 +17,7 @@ const BookingList = () => {
     const handleDelete = (id) => {
         const approve = window.confirm('You really want to delete?')
         if (approve) {
-            const url = `http://localhost:5000/bookinglist/${id}`;
+            const url = `https://ghastly-nightmare-99427.herokuapp.com/bookinglist/${id}`;
             axios.delete(url)
                 .then(res => {
                     if (res.data.deletedCount > 0) {

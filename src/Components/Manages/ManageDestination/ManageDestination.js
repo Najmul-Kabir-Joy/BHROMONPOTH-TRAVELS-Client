@@ -6,14 +6,14 @@ import MdesRow from './MdesRow/MdesRow';
 const ManageDestination = () => {
     const [list, setList] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/destinationlist')
+        fetch('https://ghastly-nightmare-99427.herokuapp.com/destinationlist')
             .then(res => res.json())
             .then(data => setList(data.destinatons))
     }, [])
     const handleDelete = (id) => {
         const approve = window.confirm('You really want to delete?')
         if (approve) {
-            const url = `http://localhost:5000/destinationlist/${id}`;
+            const url = `https://ghastly-nightmare-99427.herokuapp.com/destinationlist/${id}`;
             axios.delete(url)
                 .then(res => {
                     if (res.data.deletedCount > 0) {

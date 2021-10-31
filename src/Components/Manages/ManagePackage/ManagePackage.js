@@ -6,14 +6,14 @@ import MpacRow from './MpacRow/MpacRow';
 const ManagePackage = () => {
     const [list, setList] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/packagelist')
+        fetch('https://ghastly-nightmare-99427.herokuapp.com/packagelist')
             .then(res => res.json())
             .then(data => setList(data.packages))
     }, [])
     const handleDelete = (id) => {
         const approve = window.confirm('You really want to delete?')
         if (approve) {
-            const url = `http://localhost:5000/packagelist/${id}`;
+            const url = `https://ghastly-nightmare-99427.herokuapp.com/packagelist/${id}`;
             axios.delete(url)
                 .then(res => {
                     if (res.data.deletedCount > 0) {

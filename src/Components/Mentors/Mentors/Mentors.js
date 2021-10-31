@@ -4,7 +4,7 @@ import MentorsCard from '../MentorsCard/MentorsCard';
 const Mentors = () => {
     const [list, setList] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/activementors')
+        fetch('https://ghastly-nightmare-99427.herokuapp.com/activementors')
             .then(res => res.json())
             .then(data => setList(data))
     }, [])
