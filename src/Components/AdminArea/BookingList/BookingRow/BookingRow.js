@@ -25,7 +25,7 @@ const BookingRow = (props) => {
             <td className="py-2 text-sm border-r border-green-600">{date}</td>
 
             {
-                user.email === 'najmul15-11321@diu.edu.bd' ?
+                user.email === 'admin@bhptmail.com' ?
                     <td className="py-2 text-sm border-r border-green-600 uppercase">
                         <p>{travelingfrom} -&gt; {travelingto}</p>
                         <p className='text-red-500'>PAC-{packName}</p>
@@ -47,7 +47,7 @@ const BookingRow = (props) => {
             <td className="py-2 text-sm border-r border-green-600">{sightseeing ? <i className="fas fa-check-circle text-green-500"></i> : <i className="fas fa-times text-red-500"></i>}</td>
             <td className="py-2 text-sm border-r border-green-600">{returnticket ? <i className="fas fa-check-circle text-green-500"></i> : <i className="fas fa-times text-red-500"></i>}</td>
             {
-                user.email === 'najmul15-11321@diu.edu.bd' &&
+                user.email === 'admin@bhptmail.com' &&
                 <td className="py-2 text-sm border-r border-green-600">
                     <Link to={`/bookinglist/${_id}`}><button className='bg-transparent mr-3 hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-1 px-2 border border-yellow-500 hover:border-transparent rounded'><i className="fas fa-edit"></i></button></Link>
                     <button onClick={() => handleDelete(_id)} className='bg-transparent mr-3  hover:bg-red-500 text-red-700 font-semibold hover:text-white py-1 px-2 border border-red-500 hover:border-transparent rounded'><i className="fas fa-trash mr-1"></i>DELETE</button>

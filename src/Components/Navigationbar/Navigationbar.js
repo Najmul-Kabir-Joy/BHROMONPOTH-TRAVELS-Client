@@ -78,7 +78,7 @@ const Navigationbar = () => {
                                 </Link>
                             </li>
                             {
-                                user.email === 'najmul15-11321@diu.edu.bd' ?
+                                user.email === 'admin@bhptmail.com' ?
                                     <>
                                         <li className="nav-item dropdown inline-block relative">
                                             <span className='px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75'>ADD ITEMS</span>

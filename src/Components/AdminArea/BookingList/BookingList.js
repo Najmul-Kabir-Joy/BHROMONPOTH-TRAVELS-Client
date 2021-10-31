@@ -67,7 +67,7 @@ const BookingList = () => {
                                             <th className="px-4 py-3 border">DATE</th>
                                             <th className="px-4 py-3 border">FROM-&gt;TO</th>
                                             {
-                                                user.email === 'najmul15-11321@diu.edu.bd' ||
+                                                user.email === 'admin@bhptmail.com' ||
                                                 <th className="px-4 py-3 border">PACKAGE</th>
                                             }
                                             <th className="px-4 py-3 border">VACCINE</th>
@@ -75,7 +75,7 @@ const BookingList = () => {
                                             <th className="px-4 py-3 border"><i className="fas fa-eye"></i></th>
                                             <th className="px-4 py-3 border"><i className="fas fa-plane-arrival"></i></th>
                                             {
-                                                user.email === 'najmul15-11321@diu.edu.bd' &&
+                                                user.email === 'admin@bhptmail.com' &&
                                                 <th className="px-4 py-3 border">ACTION</th>
                                             }
                                         </tr>
