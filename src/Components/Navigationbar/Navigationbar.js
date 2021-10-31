@@ -44,17 +44,27 @@ const Navigationbar = () => {
                                     HOME
                                 </Link>
                             </li>
-                            <li className="nav-item dropdown inline-block relative">
-                                <span className='px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75'>SERVICES</span>
-                                <ul class="dropdown-menu z-50 absolute hidden text-gray-700 pt-1">
-                                    <li class=""><Link to='/alldestinations' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">DESTINATIONS</Link></li>
-                                    <li class=""><Link to='/allpackages' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">PACKAGES</Link></li>
-                                </ul>
+                            <li className="nav-item">
+                                <Link
+                                    className="px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75"
+                                    to="/allpackages"
+                                >
+                                    PACKAGES
+                                </Link>
                             </li>
                             <li className="nav-item">
                                 <Link
                                     className="px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75"
                                     to="/alldestinations"
+                                >
+                                    DESTINATIONS
+                                </Link>
+                            </li>
+
+                            <li className="nav-item">
+                                <Link
+                                    className="px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75"
+                                    to="/allphotos"
                                 >
                                     GALLARY
                                 </Link>
@@ -62,7 +72,7 @@ const Navigationbar = () => {
                             <li className="nav-item">
                                 <Link
                                     className="px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75"
-                                    to="/admin/managebookings"
+                                    to="/mentors"
                                 >
                                     MENTORS
                                 </Link>
@@ -75,7 +85,7 @@ const Navigationbar = () => {
                                             <li class=""><Link to='/addnewdestination' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">ADD DESTINATION</Link></li>
                                             <li class=""><Link to='/addnewpackage' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">ADD PACKAGE</Link></li>
                                             <li class=""><Link to='/bookinglist' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">BOOKINGS</Link></li>
-                                            <li class=""><Link to='/' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">GALARY</Link></li>
+                                            <li class=""><Link to='/addphoto' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">ADD PHOTO</Link></li>
                                         </ul>
                                     </li>
                                     :
@@ -90,8 +100,10 @@ const Navigationbar = () => {
                                         </div>
                                         <ul class="dropdown-menu z-50 absolute hidden text-gray-700 pt-1">
                                             <li class=""><Link to='/alldestinations' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">PROFILE</Link></li>
-                                            <li class=""><Link to='/allpackages' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">MY BOOKINGS</Link></li>
-                                            <li class=""><Link to='/allpackages' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">ALL BOOKINGS</Link></li>
+                                            <li class=""><Link to='/managementors' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">PROFILE</Link></li>
+                                            <li class=""><Link to={`/mybookings/${user.uid}`} class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">MY BOOKINGS</Link></li>
+                                            <li class=""><Link to='/bookinglist
+                                            ' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">ALL BOOKINGS</Link></li>
                                             <li class="" onClick={logOut} ><span class="rounded-t cursor-pointer bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">LOGOUT</span></li>
 
                                         </ul>

@@ -82,7 +82,7 @@ const UpdateBooking = () => {
         axios.put(url, item)
             .then(res => {
                 if (res.data.modifiedCount) {
-                    toast('✅ Product updated successfully', {
+                    toast('✅ Details updated successfully', {
                         position: "top-right",
                         autoClose: 1100,
                         hideProgressBar: false,
@@ -92,9 +92,9 @@ const UpdateBooking = () => {
                         progress: undefined,
                     });
                     reset();
-                    window.setTimeout(() => {
-                        history.push('/admin/managebookings')
-                    }, 1200)
+                    // window.setTimeout(() => {
+                    //     history.push('/admin/managebookings')
+                    // }, 1200)
                 }
             });
         e.preventDefault();

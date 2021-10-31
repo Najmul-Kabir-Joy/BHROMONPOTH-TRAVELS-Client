@@ -1,0 +1,26 @@
+.galary-photo{
+    position: relative;
+    overflow: hidden;
+}
+.galary-photo:hover{
+    transform: translate(10px,-10px);
+    transition: 1s ease-in-out;
+}
+
+.photo-detail {
+   position: absolute;
+    height: 0;
+    width: 100%;
+    top: 100%;
+    
+    transition: 1s ease-in-out;
+    overflow: hidden;
+}
+
+
+.galary-photo:hover .photo-detail{
+    display: block;  
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.561);
+}

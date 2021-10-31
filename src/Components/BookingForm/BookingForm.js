@@ -11,6 +11,7 @@ const BookingForm = () => {
     const { displayName, email } = user;
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
+        data.uid = user.uid;
         axios.post('http://localhost:5000/bookinglist', data)
             .then(res => {
                 if (res.data.insertedId) {

@@ -9,8 +9,8 @@ const DestinationCard = (props) => {
     return (
         <Link to={`/destinationdetails/${_id}`} className='py-10'>
             <div class="bg-white rounded-lg shadow-lg w-full transform duration-500 hover:-translate-y-2 cursor-pointer group" style={{ backgroundImage: `url(${bannerimg})` }}>
-                <div class="bg-black bg-opacity-20 h-150 px-10 flex flex-wrap flex-col p-24 hover:bg-opacity-75 transform duration-300">
-                    <p class="opacity-0 text-white text-xl group-hover:opacity-80 transform duration-500 h-18 overflow-ellipsis overflow-hidden ...">
+                <div class="bg-black bg-opacity-20 h-100 px-10 flex flex-wrap flex-col py-24 hover:bg-opacity-75 transform duration-300">
+                    <p class="opacity-0 text-white text-xl group-hover:opacity-80 transform duration-500 h-20 overflow-ellipsis overflow-hidden ...">
                         {shorttitle}
                     </p>
                 </div>

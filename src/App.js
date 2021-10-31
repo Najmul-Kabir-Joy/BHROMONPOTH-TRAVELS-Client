@@ -5,7 +5,7 @@ import AddNewPackage from './Components/AddNewPackage/AddNewPackage';
 import AdminArea from './Components/AdminArea/AdminArea/AdminArea';
 import BookingList from './Components/AdminArea/BookingList/BookingList';
 import AllDestinations from './Components/AllDestinations/AllDestinations';
-import AuthProvider from './Components/Context/AuthProvider';
+import AuthProvider from './Components/Context/AuthProvider/AuthProvider';
 import BookingForm from './Components/BookingForm/BookingForm';
 import DestinationDetails from './Components/Destinations/DestinationDetails/DestinationDetails';
 import Footer from './Components/Footer/Footer';
@@ -18,6 +18,13 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Signup from './Components/Signup/Signup';
 import UpdateBooking from './Components/UpdateBooking/UpdateBooking';
 import BookingFormId from './Components/BookingFormId/BookingFormId';
+import MyBookings from './Components/MyBookings/MyBookings';
+import Galary from './Components/Home/Galary/Galary';
+import AddNewPhoto from './Components/AdminArea/AddNewPhoto/AddNewPhoto';
+import AllPhotos from './Components/Home/Galary/AllPhotos/AllPhotos';
+import BecomeMentor from './Components/Mentors/BecomeMentor/BecomeMentor';
+import Mentors from './Components/Mentors/Mentors/Mentors';
+import ManageMentors from './Components/Mentors/ManageMentors/ManageMentors';
 
 function App() {
   return (
@@ -59,9 +66,27 @@ function App() {
             <Route exact path='/admin'>
               <AdminArea></AdminArea>
             </Route>
+            <PrivateRoute path='/managementors'>
+              <ManageMentors></ManageMentors>
+            </PrivateRoute>
+            <Route path='/mentors'>
+              <Mentors></Mentors>
+            </Route>
+            <PrivateRoute path='/becomementor'>
+              <BecomeMentor></BecomeMentor>
+            </PrivateRoute>
             <PrivateRoute exact path='/bookinglist'>
               <BookingList></BookingList>
             </PrivateRoute>
+            <PrivateRoute path='/mybookings/:id'>
+              <MyBookings></MyBookings>
+            </PrivateRoute>
+            <Route path='/addphoto'>
+              <AddNewPhoto></AddNewPhoto>
+            </Route>
+            <Route path='/allphotos'>
+              <AllPhotos></AllPhotos>
+            </Route>
             <Route path='/bookinglist/:id'>
               <UpdateBooking></UpdateBooking>
             </Route>

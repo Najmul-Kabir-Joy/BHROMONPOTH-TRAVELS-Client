@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import GalaryImg from './GalaryImg/GalaryImg';
+import GalaryImg from '../GalaryImg/GalaryImg';
 
-const Galary = () => {
+const AllPhotos = () => {
     const [items, setItems] = useState([]);
     useEffect(() => {
         fetch('http://localhost:5000/allphotos')
@@ -11,8 +11,8 @@ const Galary = () => {
     }, [])
     return (
         <div>
-            <div className='text-center my-16'>
-                <h1 className='text-5xl inline border-b-2 border-green-400'>GALARY</h1>
+            <div className='text-center pt-4 pb-10'>
+                <h1 className='text-3xl inline border-b-2 border-green-400'>GALARY</h1>
             </div>
             <div class=" mx-auto p-5">
                 {
@@ -20,7 +20,7 @@ const Galary = () => {
                         <section class="pt-0 px-4">
                             <div class="flex flex-wrap -mx-4">
                                 {
-                                    items.slice(0, 6).map(item => <GalaryImg key={item._id} item={item}></GalaryImg>)
+                                    items.map(item => <GalaryImg key={item._id} item={item}></GalaryImg>)
                                 }
                             </div>
                         </section>
@@ -45,4 +45,4 @@ const Galary = () => {
     );
 };
 
-export default Galary;
+export default AllPhotos;
