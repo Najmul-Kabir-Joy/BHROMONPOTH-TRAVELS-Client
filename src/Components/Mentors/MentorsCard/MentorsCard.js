@@ -4,7 +4,7 @@ const MentorsCard = (props) => {
     const { name, des, photo, job, location, email } = props.item;
     return (
 
-        <div class="max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-2xl border-2 border-green-400 hover:bg-green-400 group hover:border-white hover:transition duration-500 ease-in-out">
+        <div class="max-w-sm mx-auto w-72 overflow-hidden bg-white rounded-lg shadow-2xl border-2 border-green-400 hover:bg-green-400 group hover:border-white hover:transition duration-500 ease-in-out">
             <img class="object-cover object-center w-full h-44" src={photo} alt="avatar" />
             <div class="px-6 py-4">
                 <h1 class="text-xl font-semibold text-gray-800 group-hover:text-white">{name}</h1>

@@ -18,7 +18,7 @@ const AllPhotos = () => {
                 {
                     items.length ?
                         <section class="pt-0 px-4">
-                            <div class="flex flex-wrap -mx-4">
+                            <div class="grid grid-cols-4 gap-10 -mx-4">
                                 {
                                     items.map(item => <GalaryImg key={item._id} item={item}></GalaryImg>)
                                 }
