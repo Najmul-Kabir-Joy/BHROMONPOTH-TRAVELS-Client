@@ -14,13 +14,13 @@ const Galary = () => {
             <div className='text-center my-16'>
                 <h1 className='text-5xl inline border-b-2 border-green-400'>GALARY</h1>
             </div>
-            <div class=" mx-auto p-5">
+            <div class="container mx-auto p-5">
                 {
                     items.length ?
                         <section class="pt-0 px-4">
-                            <div class="flex flex-wrap -mx-4">
+                            <div class="grid grid-cols-3 -mx-4 gap-10">
                                 {
-                                    items.slice(0, 8).map(item => <GalaryImg key={item._id} item={item}></GalaryImg>)
+                                    items.slice(0, 6).map(item => <GalaryImg key={item._id} item={item}></GalaryImg>)
                                 }
                             </div>
                         </section>

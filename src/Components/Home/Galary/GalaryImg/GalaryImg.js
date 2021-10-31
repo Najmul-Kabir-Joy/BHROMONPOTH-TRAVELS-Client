@@ -5,8 +5,8 @@ const GalaryImg = (props) => {
     const { photoUrl, title } = props.item;
     return (
         <>
-            <div class="md:w-1/4 mb-8 galary-photo mr-10">
-                <img class="rounded-xl shadow-2xl single-photo" src={photoUrl} alt="" />
+            <div class="md:w-full mb-8 galary-photo mr-10">
+                <img class="rounded-xl shadow-2xl single-photo w-full h-80" src={photoUrl} alt="" />
                 <div class="photo-detail rounded-xl">
                     <p className='pt-20 text-green-400'>{title}</p>
                 </div>
