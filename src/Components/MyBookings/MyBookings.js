@@ -54,7 +54,7 @@ const MyBookings = () => {
                             draggable
                             pauseOnHover
                         />
-                        <h1 className='text-3xl inline border-b-2 border-green-400 uppercase'>manage bookings </h1>
+                        <h1 className='text-3xl inline border-b-2 border-green-400 uppercase'>my bookings </h1>
                         <section className="p-6">
                             <div className="w-full mb-8 overflow-hidden pb-64">
                                 <div className="w-full overflow-x-auto">

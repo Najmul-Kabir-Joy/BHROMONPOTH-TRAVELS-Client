@@ -25,6 +25,8 @@ import AllPhotos from './Components/Home/Galary/AllPhotos/AllPhotos';
 import BecomeMentor from './Components/Mentors/BecomeMentor/BecomeMentor';
 import Mentors from './Components/Mentors/Mentors/Mentors';
 import ManageMentors from './Components/Mentors/ManageMentors/ManageMentors';
+import ManageDestination from './Components/Manages/ManageDestination/ManageDestination';
+import ManagePackage from './Components/Manages/ManagePackage/ManagePackage';
 
 function App() {
   return (
@@ -71,6 +73,12 @@ function App() {
             </PrivateRoute>
             <Route path='/mentors'>
               <Mentors></Mentors>
+            </Route>
+            <PrivateRoute path='/managepackages'>
+              <ManagePackage></ManagePackage>
+            </PrivateRoute>
+            <Route path='/managedestinations'>
+              <ManageDestination></ManageDestination>
             </Route>
             <PrivateRoute path='/becomementor'>
               <BecomeMentor></BecomeMentor>

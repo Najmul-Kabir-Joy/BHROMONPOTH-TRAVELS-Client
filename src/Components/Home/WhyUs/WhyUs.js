@@ -4,7 +4,7 @@ const WhyUs = () => {
     return (
         <div>
             <div className='mt-5'>
-                <h1 className='text-5xl border-b-2 border-green-300 inline'>OUR OFFERING</h1>
+                <h1 className='text-5xl border-b-2 border-green-300 inline'>WHY BHROMONPOTH</h1>
             </div>
             <div className='flex justify-center'>
                 <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-16 '>

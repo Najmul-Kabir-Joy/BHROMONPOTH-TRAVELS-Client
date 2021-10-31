@@ -79,15 +79,25 @@ const Navigationbar = () => {
                             </li>
                             {
                                 user.email === 'najmul15-11321@diu.edu.bd' ?
-                                    <li className="nav-item dropdown inline-block relative">
-                                        <span className='px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75'>CONTROLS</span>
-                                        <ul class="dropdown-menu z-50 absolute hidden text-gray-700 pt-1">
-                                            <li class=""><Link to='/addnewdestination' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">ADD DESTINATION</Link></li>
-                                            <li class=""><Link to='/addnewpackage' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">ADD PACKAGE</Link></li>
-                                            <li class=""><Link to='/bookinglist' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">BOOKINGS</Link></li>
-                                            <li class=""><Link to='/addphoto' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">ADD PHOTO</Link></li>
-                                        </ul>
-                                    </li>
+                                    <>
+                                        <li className="nav-item dropdown inline-block relative">
+                                            <span className='px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75'>ADD ITEMS</span>
+                                            <ul class="dropdown-menu z-50 absolute hidden text-gray-700 pt-1">
+                                                <li class=""><Link to='/addnewdestination' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">ADD DESTINATION</Link></li>
+                                                <li class=""><Link to='/addnewpackage' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">ADD PACKAGE</Link></li>
+                                                <li class=""><Link to='/addphoto' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">ADD PHOTO</Link></li>
+                                            </ul>
+                                        </li>
+                                        <li className="nav-item dropdown inline-block relative">
+                                            <span className='px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75'>MANAGE</span>
+                                            <ul class="dropdown-menu z-50 absolute hidden text-gray-700 pt-1">
+                                                <li class=""><Link to='/managedestinations' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">MANAGE DESTINATION</Link></li>
+                                                <li class=""><Link to='/managepackages' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">MANAGE PACKAGE</Link></li>
+                                                <li class=""><Link to='/managementors' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">MANAGE MENTOR</Link></li>
+                                                <li class=""><Link to='/bookinglist' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-10 block whitespace-no-wrap">BOOKINGS</Link></li>
+                                            </ul>
+                                        </li>
+                                    </>
                                     :
                                     ''
                             }
@@ -95,15 +105,14 @@ const Navigationbar = () => {
                                 user.email ?
                                     <li className="nav-item dropdown inline-block relative">
 
-                                        <div class="w-10 h-10 ml-2 overflow-hidden border-2 border-white rounded-full cursor-pointer" onClick={logOut}>
+                                        <div class="w-10 h-10 ml-2 overflow-hidden border-2 border-white rounded-full cursor-pointer">
                                             <img src={user.photoURL} class="object-cover w-full h-full" alt="avatar" />
                                         </div>
                                         <ul class="dropdown-menu z-50 absolute hidden text-gray-700 pt-1">
-                                            <li class=""><Link to='/alldestinations' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">PROFILE</Link></li>
-                                            <li class=""><Link to='/managementors' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">PROFILE</Link></li>
+                                            <li class=""><Link to='/' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">PROFILE</Link></li>
+                                            <li class=""><Link to='/becomementor' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">BE MENTOR</Link></li>
                                             <li class=""><Link to={`/mybookings/${user.uid}`} class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">MY BOOKINGS</Link></li>
-                                            <li class=""><Link to='/bookinglist
-                                            ' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">ALL BOOKINGS</Link></li>
+                                            <li class=""><Link to='/bookinglist' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">ALL BOOKINGS</Link></li>
                                             <li class="" onClick={logOut} ><span class="rounded-t cursor-pointer bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">LOGOUT</span></li>
 
                                         </ul>

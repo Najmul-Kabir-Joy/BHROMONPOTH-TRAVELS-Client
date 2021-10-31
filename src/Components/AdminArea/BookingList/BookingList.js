@@ -54,36 +54,55 @@ const BookingList = () => {
             <section className="p-6">
                 <div className="w-full mb-8 overflow-hidden pb-64">
                     <div className="w-full overflow-x-auto">
-                        <table className="w-full table-auto">
-                            <thead>
-                                <tr className="text-md font-semibold bg-green-300 text-center tracking-wide text-gray-900 uppercase border-b border-green-600">
-                                    <th className="px-4 py-3 border">Sl.</th>
-                                    <th className="px-4 py-3 border">NAME</th>
-                                    <th className="px-4 py-3 border">EMAIL</th>
-                                    <th className="px-4 py-3 border">PHONE</th>
-                                    <th className="px-4 py-3 border"><i className="fas fa-users"></i></th>
-                                    <th className="px-4 py-3 border">DATE</th>
-                                    <th className="px-4 py-3 border">FROM-&gt;TO</th>
-                                    {
-                                        user.email === 'najmul15-11321@diu.edu.bd' ||
-                                        <th className="px-4 py-3 border">PACKAGE</th>
-                                    }
-                                    <th className="px-4 py-3 border">VACCINE</th>
-                                    <th className="px-4 py-3 border"><i className="fas fa-hotel"></i></th>
-                                    <th className="px-4 py-3 border"><i className="fas fa-eye"></i></th>
-                                    <th className="px-4 py-3 border"><i className="fas fa-plane-arrival"></i></th>
-                                    {
-                                        user.email === 'najmul15-11321@diu.edu.bd' &&
-                                        <th className="px-4 py-3 border">ACTION</th>
-                                    }
-                                </tr>
-                            </thead>
-                            <tbody className="bg-white">
-                                {
-                                    items.map((item, index) => <BookingRow key={item._id} item={item} handleDelete={handleDelete} index={index + 1}></BookingRow>)
-                                }
-                            </tbody>
-                        </table>
+                        {
+                            items.length ?
+                                <table className="w-full table-auto">
+                                    <thead>
+                                        <tr className="text-md font-semibold bg-green-300 text-center tracking-wide text-gray-900 uppercase border-b border-green-600">
+                                            <th className="px-4 py-3 border">Sl.</th>
+                                            <th className="px-4 py-3 border">NAME</th>
+                                            <th className="px-4 py-3 border">EMAIL</th>
+                                            <th className="px-4 py-3 border">PHONE</th>
+                                            <th className="px-4 py-3 border"><i className="fas fa-users"></i></th>
+                                            <th className="px-4 py-3 border">DATE</th>
+                                            <th className="px-4 py-3 border">FROM-&gt;TO</th>
+                                            {
+                                                user.email === 'najmul15-11321@diu.edu.bd' ||
+                                                <th className="px-4 py-3 border">PACKAGE</th>
+                                            }
+                                            <th className="px-4 py-3 border">VACCINE</th>
+                                            <th className="px-4 py-3 border"><i className="fas fa-hotel"></i></th>
+                                            <th className="px-4 py-3 border"><i className="fas fa-eye"></i></th>
+                                            <th className="px-4 py-3 border"><i className="fas fa-plane-arrival"></i></th>
+                                            {
+                                                user.email === 'najmul15-11321@diu.edu.bd' &&
+                                                <th className="px-4 py-3 border">ACTION</th>
+                                            }
+                                        </tr>
+                                    </thead>
+                                    <tbody className="bg-white">
+                                        {
+                                            items.map((item, index) => <BookingRow key={item._id} item={item} handleDelete={handleDelete} index={index + 1}></BookingRow>)
+                                        }
+                                    </tbody>
+
+                                </table>
+                                :
+                                <div class="flex justify-center items-center py-20 mx-auto">
+                                    <div
+                                        class="
+                                    animate-spin
+                                    rounded-full
+                                    h-32
+                                    w-32
+                                    border-t-2 border-b-2 border-green-500
+                                "
+                                    >
+
+                                    </div>
+                                </div>
+
+                        }
                     </div>
                 </div>
             </section>
