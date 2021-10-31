@@ -9,7 +9,7 @@ const PackageCard = (props) => {
         <div class="p-4 pt-10 xl:w-1/4 md:w-1/2 w-full shadow-sm testingEffect">
             <div class="h-full p-6 rounded-lg border-2 border-green-500 flex flex-col relative overflow-hidden group hover:bg-green-400 hover:text-white hover:transition duration-500 ease-in-out">
                 {
-                    popular.toLowerCase() === 'no' ?
+                    popular.toLowerCase() === 'yes' ?
                         <span class="bg-green-400 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl group-hover:bg-white group-hover:text-green-400">POPULAR</span>
                         :
                         <span></span>
