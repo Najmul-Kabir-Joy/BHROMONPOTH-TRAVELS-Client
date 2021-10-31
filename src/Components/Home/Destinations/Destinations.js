@@ -20,7 +20,7 @@ const Destinations = () => {
                         </div>
                         <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 lg:gap-16 sm:gap-10 mx-10'>
                             {
-                                list?.slice(0, 6).map(item => <DestinationCard key={item._id} item={item}></DestinationCard>)
+                                list?.slice(0, 8).map(item => <DestinationCard key={item._id} item={item}></DestinationCard>)
                             }
                         </div>
                     </section>
