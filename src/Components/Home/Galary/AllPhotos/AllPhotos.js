@@ -14,11 +14,11 @@ const AllPhotos = () => {
             <div className='text-center pt-4 pb-10'>
                 <h1 className='text-3xl inline border-b-2 border-green-400'>GALARY</h1>
             </div>
-            <div class=" mx-auto p-5">
+            <div class="container mx-auto p-5">
                 {
                     items.length ?
                         <section class="pt-0 px-4">
-                            <div class="grid grid-cols-4 gap-10 -mx-4">
+                            <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-10 -mx-4">
                                 {
                                     items.map(item => <GalaryImg key={item._id} item={item}></GalaryImg>)
                                 }
