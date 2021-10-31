@@ -11,7 +11,7 @@ const Destinations = () => {
     }, [])
     console.log(list.length)
     return (
-        <div>
+        <div data-aos="fade-right" data-aos-duration="2000">
             {
                 list.length > 0 ?
                     <section className='mt-16'>

@@ -6,7 +6,7 @@ const PackageCard = (props) => {
     const { _id, countryname, money, days, persons, places, imgsrc, popular } = item;
     return (
 
-        <div class="p-4 pt-10 xl:w-1/4 md:w-1/2 w-full shadow-sm testingEffect">
+        <div class="p-4 pt-10 xl:w-1/4 md:w-1/2 w-full shadow-sm testingEffect" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay='500'>
             <div class="h-full p-6 rounded-lg border-2 border-green-500 flex flex-col relative overflow-hidden group hover:bg-green-400 hover:text-white hover:transition duration-500 ease-in-out">
                 {
                     popular.toLowerCase() === 'yes' ?

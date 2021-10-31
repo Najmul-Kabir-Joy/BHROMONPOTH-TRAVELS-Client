@@ -10,7 +10,7 @@ const Galary = () => {
 
     }, [])
     return (
-        <div>
+        <div >
             <div className='text-center my-16'>
                 <h1 className='text-5xl inline border-b-2 border-green-400'>GALARY</h1>
             </div>

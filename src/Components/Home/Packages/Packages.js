@@ -10,7 +10,7 @@ const Packages = () => {
             .then(data => setList(data.packages))
     }, [])
     return (
-        <div className='mt-16'>
+        <div className='mt-16' data-aos="fade-right" data-aos-duration='4000'>
             <div>
                 <h1 className='text-5xl border-b-2 border-green-400 inline'>OUR POPULAR PACKAGES</h1>
             </div>

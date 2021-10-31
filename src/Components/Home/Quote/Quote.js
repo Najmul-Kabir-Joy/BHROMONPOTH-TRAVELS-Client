@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Quote = () => {
     return (
-        <section className="relative text-white bg-center bg-no-repeat bg-cover" role="banner" style={{ backgroundImage: "url(https://www.istanbulturkeytravel.com/wp-content/uploads/2020/04/cappadocia.jpg)" }}>
+        <section data-aos="fade-left" data-aos-duration="3000" className="relative text-white bg-center bg-no-repeat bg-cover" role="banner" style={{ backgroundImage: "url(https://www.istanbulturkeytravel.com/wp-content/uploads/2020/04/cappadocia.jpg)" }}>
             <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
             <div className="relative px-4 py-24 mx-auto max-w-screen-xl sm:px-6 lg:px-8 sm:py-36 lg:flex lg:items-center">

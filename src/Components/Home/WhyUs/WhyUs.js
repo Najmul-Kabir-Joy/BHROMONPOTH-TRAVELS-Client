@@ -2,7 +2,7 @@ import React from 'react';
 
 const WhyUs = () => {
     return (
-        <div>
+        <div data-aos="fade-up">
             <div className='mt-5'>
                 <h1 className='text-5xl border-b-2 border-green-300 inline'>WHY BHROMONPOTH</h1>
             </div>

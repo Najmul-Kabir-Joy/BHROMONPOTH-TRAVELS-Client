@@ -15,6 +15,7 @@
 - _REACT-SWEETALERT2_
 - _FIREBASE_
 - _HEROKU_
+- _REACT-AOS_
 
 ###### Under the hood
 * _Responsive Behaviour_
