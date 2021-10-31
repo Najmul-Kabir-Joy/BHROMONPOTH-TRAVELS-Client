@@ -27,6 +27,7 @@ import Mentors from './Components/Mentors/Mentors/Mentors';
 import ManageMentors from './Components/Mentors/ManageMentors/ManageMentors';
 import ManageDestination from './Components/Manages/ManageDestination/ManageDestination';
 import ManagePackage from './Components/Manages/ManagePackage/ManagePackage';
+import NotFound from './Components/NotFound/NotFound';
 
 function App() {
   return (
@@ -59,12 +60,12 @@ function App() {
             <Route path='/alldestinations'>
               <AllDestinations></AllDestinations>
             </Route>
-            <Route path='/addnewdestination'>
+            <PrivateRoute path='/addnewdestination'>
               <AddNewDestination></AddNewDestination>
-            </Route>
-            <Route path='/addnewpackage'>
+            </PrivateRoute>
+            <PrivateRoute path='/addnewpackage'>
               <AddNewPackage></AddNewPackage>
-            </Route>
+            </PrivateRoute>
             <Route exact path='/admin'>
               <AdminArea></AdminArea>
             </Route>
@@ -103,6 +104,9 @@ function App() {
             </Route>
             <Route path='/usersignup'>
               <Signup></Signup>
+            </Route>
+            <Route path='*'>
+              <NotFound></NotFound>
             </Route>
           </Switch>
           <Footer></Footer>

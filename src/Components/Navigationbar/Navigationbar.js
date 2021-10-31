@@ -66,7 +66,7 @@ const Navigationbar = () => {
                                     className="px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75"
                                     to="/allphotos"
                                 >
-                                    GALLARY
+                                    GALARY
                                 </Link>
                             </li>
                             <li className="nav-item">
@@ -109,7 +109,6 @@ const Navigationbar = () => {
                                             <img src={user.photoURL} class="object-cover w-full h-full" alt="avatar" />
                                         </div>
                                         <ul class="dropdown-menu z-50 absolute hidden text-gray-700 pt-1">
-                                            <li class=""><Link to='/' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">PROFILE</Link></li>
                                             <li class=""><Link to='/becomementor' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">BE MENTOR</Link></li>
                                             <li class=""><Link to={`/mybookings/${user.uid}`} class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">MY BOOKINGS</Link></li>
                                             <li class=""><Link to='/bookinglist' class="rounded-t bg-green-400 hover:bg-green-600 text-white py-2 px-5 block whitespace-no-wrap">ALL BOOKINGS</Link></li>
