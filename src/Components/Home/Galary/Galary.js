@@ -18,7 +18,7 @@ const Galary = () => {
                 {
                     items.length ?
                         <section class="pt-0 px-4">
-                            <div class="grid grid-cols-3 -mx-4 gap-10">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 -mx-4 gap-10">
                                 {
                                     items.slice(0, 6).map(item => <GalaryImg key={item._id} item={item}></GalaryImg>)
                                 }
